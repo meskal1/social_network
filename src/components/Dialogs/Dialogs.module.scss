@@ -18,10 +18,10 @@
 	display: flex;
 	height: 100%;
 	.dialog_user_list {
-		overflow-y: scroll;
+		overflow-y: auto;
 		max-width: 230px;
 		flex: 1 1 auto;
-		height: 843px;
+		height: 843px; 
 		.dialog_item {
 			&:hover {
 				background: #6b6e75;
@@ -44,7 +44,7 @@
 	.dialog_current_user {
 		flex-grow: 1;
 		background: url("./DAVNsOI.jpg") 0 0/450px 500px repeat;
-		overflow-y: scroll;
+		overflow-y: auto;
 		height: 843px;
 		padding: 0 0 50px 0;
 		.current_dialog_list {

@@ -4,7 +4,7 @@ import s from './Profile.module.scss';
 type ProfileType = {
 
 }
-
+//TODO Зарефакторить Profile разделить на компоненты посты и юзер инфо
 export const Profile = (props: ProfileType) => {
 	return (
 		<>
