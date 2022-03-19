@@ -1,0 +1,146 @@
+.block_user_info {
+	.content_picture {
+		position: absolute;
+		overflow: hidden;
+		border-radius: 5px;
+		width: 100%;
+		.content_img {
+			width: 100%;
+			max-height: 400px;
+			transition: all linear 0.3s;
+			filter: opacity(50%);
+			&:hover {
+				transition: all linear 0.3s;
+				transform: scale(1.02, 1.02);
+			}
+		}
+	}
+	.about_user {
+		position: relative;
+		display: flex;
+		padding: 15px;
+		gap: 25px;
+		.user_picture {
+			overflow: hidden;
+			border: 1px solid white;
+			.user_img {
+				transform: scale(3.5, 3.5);
+				object-fit: cover;
+				object-position: -47px -46px;
+				width: 200px;
+				height: 200px;
+			}
+		}
+		.user_info {
+			*:not(:first-child),
+			*:not(:last-child) {
+				margin: 0px 0px 10px 0px;
+			}
+			.user_name {
+				font-weight: 500;
+				font-size: 30px;
+				margin: 0px 0px 20px 0px;
+			}
+			.user_birth {
+			}
+			.user_country {
+			}
+			.user_aducation {
+			}
+			.user_site {
+			}
+		}
+	}
+}
+.block_create_post {
+	padding: 15px;
+	position: relative;
+	.user_posts_title {
+		font-size: 20px;
+		font-weight: 500;
+		margin: 0px 0px 10px 0px;
+	}
+	.create_new_post {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px;
+		::-webkit-scrollbar {
+			width: 0; /* Remove scrollbar space */
+			background: transparent; /* Optional: just make scrollbar invisible */
+		}
+		.textarea_post {
+			font-family: "Montserrat";
+			background: rgba(255, 255, 255, 0.789);
+			overflow-y: scroll;
+			font-weight: 600;
+			padding: 5px 10px;
+			resize: none;
+			height: 105px;
+			flex: 1 1 auto;
+			border-radius: 5px;
+			&::placeholder {
+				color: black;
+				transition: all linear 0.2s;
+			}
+			&:focus {
+				outline: none;
+				&::placeholder {
+					transition: all linear 0.2s;
+					transform: translate(0, -100px);
+				}
+			}
+		}
+		.post_button {
+			background: #393e48;
+			color: #c6c7ca;
+			box-shadow: white 0px 0px 6px 1px;
+			font-family: "Montserrat";
+			font-weight: 600;
+			font-size: 12px;
+			padding: 7px 10px;
+			align-self: flex-end;
+			border-radius: 30px;
+			cursor: pointer;
+			transition: all linear 0.15s;
+			&:hover {
+				background: #6b6e75;
+				color: white;
+				transition: all linear 0.15s;
+			}
+		}
+	}
+}
+.block_user_posts {
+	font-size: 14px;
+	border-radius: 5px;
+	padding: 15px;
+	position: relative;
+	// background: url("./img/1f135a074a169fq9a0e5.jpeg") 0 0/350px 750px repeat;
+	flex-grow: 1;
+	.old_posts {
+		.old_post {
+			display: flex;
+			&:not(:last-child) {
+				margin: 0px 0px 10px 0px;
+			}
+			.post_picture {
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				overflow: hidden;
+				// border: 1px solid white;
+				margin: 0px 15px 0px 0px;
+				.post_img {
+					transform: scale(3.5, 3.5);
+					object-fit: cover;
+					object-position: -12px -11px;
+					width: 50px;
+					height: 50px;
+					border-radius: 50px;
+				}
+			}
+			.old_post_text {
+			}
+		}
+	}
+}

@@ -1,0 +1,197 @@
+.dialogs_container {
+	::-webkit-scrollbar {
+		width: 5px; /* Remove scrollbar space */
+		// background: red; /* Optional: just make scrollbar invisible */
+	}
+	::-webkit-scrollbar-track {
+		background: #f1f1f177;
+		border-radius: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+		background: rgb(48, 48, 48);
+		border-radius: 10px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: rgb(89, 55, 55);
+	}
+	font-size: 14px;
+	display: flex;
+	height: 100%;
+	.dialog_user_list {
+		overflow-y: scroll;
+		max-width: 230px;
+		flex: 1 1 auto;
+		height: 843px;
+		.dialog_item {
+			&:hover {
+				background: #6b6e75;
+			}
+			.dialog_user_name {
+				padding: 10px 15px;
+				display: flex;
+				color: white;
+				column-gap: 15px;
+				align-items: center;
+				.user_name {
+					line-height: 18px;
+				}
+			}
+			.active_dialog {
+				background: #6b6e75;
+			}
+		}
+	}
+	.dialog_current_user {
+		flex-grow: 1;
+		background: url("./DAVNsOI.jpg") 0 0/450px 500px repeat;
+		overflow-y: scroll;
+		height: 843px;
+		padding: 0 0 50px 0;
+		.current_dialog_list {
+			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			> * {
+				margin: 0px 0px 10px 0px;
+			}
+			.friend_item_message {
+				display: flex;
+				column-gap: 15px;
+				.friend_message {
+					position: relative;
+					background: rgba(118, 121, 117, 0.83);
+					align-self: flex-start;
+					line-height: 18px;
+					padding: 5px 10px;
+					border-radius: 0 8px 8px 8px;
+					max-width: 447px;
+					flex: 0 1 auto;
+					&::after {
+						content: "";
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						border-radius: 0px 10px 0px 0px;
+						background: black;
+						left: -10px;
+						top: 0px;
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						background: rgba(118, 121, 117, 0.83);
+						left: -10px;
+						top: 0px;
+					}
+				}
+			}
+			.my_item_message {
+				display: flex;
+				justify-content: flex-end;
+				column-gap: 15px;
+				.my_message {
+					position: relative;
+					background: rgba(72, 141, 49, 0.83);
+					align-self: flex-start;
+					line-height: 18px;
+					padding: 5px 10px;
+					border-radius: 8px 0px 8px 8px;
+					max-width: 447px;
+					flex: 0 1 auto;
+					&::after {
+						content: "";
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						border-radius: 10px 0px 0px 0px;
+						background: black;
+						right: -10px;
+						top: 0px;
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						background: rgba(72, 141, 49, 0.83);
+						right: -10px;
+						top: 0px;
+					}
+				}
+			}
+		}
+		.block_send_message {
+			z-index: 5;
+			position: fixed;
+			bottom: 10px;
+			display: flex;
+			padding: 0 10px;
+			::-webkit-scrollbar {
+				width: 0; /* Remove scrollbar space */
+				background: transparent; /* Optional: just make scrollbar invisible */
+			}
+			.input_message {
+				font-family: "Montserrat";
+				font-size: 14px;
+				font-weight: 500;
+				width: 530px;
+				max-height: 270px;
+				padding: 13px 15px;
+				border-radius: 30px;
+				margin: 0px 10px 0px 0px;
+				overflow-y: scroll;
+				line-height: 16px;
+				background: white;
+				color: black;
+				&::before {
+					content: "Написать сообщение...";
+					color: rgba(0, 0, 0, 0.412);
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+			.send_message {
+				align-self: flex-end;
+				background: #e8e3e7 url("./telegram_logo.jpg") 0 2px/47px 47px no-repeat;
+				width: 47px;
+				height: 47px;
+				border-radius: 50px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.friend_picture {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	overflow: hidden;
+	.friend_img {
+		transform: scale(3.5, 3.5);
+		object-fit: cover;
+		object-position: -12px -11px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+	}
+}
+.my_picture {
+	// justify-content: end;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	overflow: hidden;
+	.my_img {
+		transform: scale(3.5, 3.5);
+		object-fit: cover;
+		object-position: -12px -11px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+	}
+}
