@@ -11,12 +11,18 @@ export const Navbar = (props: NavbarType) => {
 		<>
 			<nav className={s.main_sideBar}>
 				<ul className={s.sideBar_list}>
-					<li className={s.sideBar_item}><NavLink className={s.sideBar_link} to="/profile" activeClassName={s.active_link}>Мой профиль</NavLink></li>
-					<li className={s.sideBar_item}><NavLink className={s.sideBar_link} to="/news" activeClassName={s.active_link}>Новости</NavLink></li>
-					<li className={s.sideBar_item}><NavLink className={s.sideBar_link} to="/dialogs" activeClassName={s.active_link}>Сообщения</NavLink></li>
-					<li className={s.sideBar_item}><NavLink className={s.sideBar_link} to="/music" activeClassName={s.active_link}>Музыка</NavLink></li>
-					<li className={s.sideBar_item}><NavLink className={s.sideBar_link} to="/settings" activeClassName={s.active_link}>Настройки</NavLink></li>
-					<li className={s.sideBar_item}><NavLink className={s.sideBar_link} to="/sv" activeClassName={s.active_link}>S.V.</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/profile" activeClassName={s.active_link}>Мой профиль</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/news" activeClassName={s.active_link}>Новости</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/dialogs" activeClassName={s.active_link}>Сообщения</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/music" activeClassName={s.active_link}>Музыка</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/settings" activeClassName={s.active_link}>Настройки</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/sv" activeClassName={s.active_link}>S.V.</NavLink></li>
 				</ul>
 			</nav>
 		</>
