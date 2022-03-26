@@ -1,0 +1,109 @@
+.user_info_container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	background: url("https://oboi247.ru/img/post/45/12.jpg") 0 0 /100% 100% no-repeat;
+	&::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: rgba(0, 0, 0, 0.45);
+	}
+	.block_user_info {
+		position: relative;
+		display: flex;
+		padding: 15px;
+		gap: 25px;
+		.user_picture {
+			overflow: hidden;
+			border: 1px solid white;
+			.user_img {
+				transform: scale(3.5, 3.5);
+				object-fit: cover;
+				object-position: -47px -46px;
+				width: 200px;
+				height: 200px;
+			}
+		}
+		.user_info {
+			*:not(:first-child),
+			*:not(:last-child) {
+				margin: 0px 0px 10px 0px;
+			}
+			.user_name {
+				font-weight: 500;
+				font-size: 30px;
+				margin: 0px 0px 20px 0px;
+			}
+			.user_birth {
+			}
+			.user_country {
+			}
+			.user_aducation {
+			}
+			.user_site {
+			}
+		}
+	}
+	.block_create_post {
+		padding: 15px;
+		position: relative;
+		.user_posts_title {
+			font-size: 20px;
+			font-weight: 500;
+			margin: 0px 0px 10px 0px;
+		}
+		.create_new_post {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			.textarea_post {
+				font-family: "Montserrat";
+				overflow-y: scroll;
+				font-weight: 600;
+				padding: 0px 5px;
+				resize: none;
+				height: 115px;
+				flex: 1 1 auto;
+				border-radius: 5px;
+				border: 7px solid rgba(255, 255, 255, 0);
+				background: rgba(255, 255, 255, 0.789);
+				&::-webkit-scrollbar {
+					width: 0; /* Remove scrollbar space */
+					background: transparent; /* Optional: just make scrollbar invisible */
+				}
+				&::placeholder {
+					color: black;
+					transition: all linear 0.2s;
+				}
+				&:focus {
+					outline: none;
+					&::placeholder {
+						transition: all linear 0.2s;
+						transform: translate(0, -100px);
+					}
+				}
+			}
+			.post_button {
+				background: #393e48;
+				color: #c6c7ca;
+				box-shadow: white 0px 0px 6px 1px;
+				font-family: "Montserrat";
+				font-weight: 600;
+				font-size: 12px;
+				padding: 7px 10px;
+				align-self: flex-end;
+				border-radius: 30px;
+				cursor: pointer;
+				transition: all linear 0.15s;
+				&:hover {
+					background: #6b6e75;
+					color: white;
+					transition: all linear 0.15s;
+				}
+			}
+		}
+	}
+}

@@ -6,23 +6,20 @@ import { Header } from './components/Header/Header';
 import { Navbar } from './components/Navbar/Navbar';
 import { Profile } from './components/Profile/Profile';
 import { v1 } from 'uuid';
+import { News } from './components/News/News';
+import { Music } from './components/Music/Music';
+import { Settings } from './components/Settings/Settings';
+import { SV } from './components/SV/SV';
 
-const App = () => {
-	let dialogUserNames = [
-		{ id: v1(), name: 'Dima Boyarski' },
-		{ id: v1(), name: 'Vika Rozumovskaya' },
-		{ id: v1(), name: 'Sasha Boyarushnik' },
-		{ id: v1(), name: 'Denis Shira' },
-		{ id: v1(), name: 'Petya Borich' },
-		{ id: v1(), name: 'Igor Pekuma' },
-		{ id: v1(), name: 'Gleb Risham' },
-		{ id: v1(), name: 'Roma Abdula' },
-		{ id: v1(), name: 'Daniil Korki' },
-		{ id: v1(), name: 'Sergei Jorich' },
-		{ id: v1(), name: 'Roman Panich' },
-		{ id: v1(), name: 'Daniel Kossi' },
-		{ id: v1(), name: 'Serega Joravch' },
-	];
+type dialogUserNamesType = {
+	id: string
+	name: string
+}
+type AppType = {
+	dialogUserNames: dialogUserNamesType[]
+}
+const App: React.FC<AppType> = ({ dialogUserNames }) => {
+
 	return (
 		<BrowserRouter>
 			<div className={s.wrapper}>
@@ -31,11 +28,11 @@ const App = () => {
 					<Navbar />
 					<div className={s.main_content}>
 						<Route path="/profile" component={Profile} />
-						<Route path="/news" component={Profile} />
-						<Route path="/dialogs" ><Dialogs dialogUserNames={dialogUserNames} /></Route>
-						<Route path="/music" component={Dialogs} />
-						<Route path="/settings" component={Dialogs} />
-						<Route path="/sv" component={Dialogs} />
+						<Route path="/news" component={News} />
+						<Route exact path="/dialogs" render={() => <Dialogs dialogUserNames={dialogUserNames} />} />
+						<Route path="/music" component={Music} />
+						<Route path="/settings" component={Settings} />
+						<Route path="/sv" component={SV} />
 					</div>
 				</main>
 				<footer className={s.footer__container} ></footer >

@@ -1,99 +1,18 @@
 import React from 'react';
+import { Posts } from './Posts/Posts';
 import s from './Profile.module.scss';
+import { UserInfo } from './UserInfo/UserInfo';
 
 type ProfileType = {
 
 }
-//TODO Зарефакторить Profile разделить на компоненты посты и юзер инфо
+
 export const Profile = (props: ProfileType) => {
 	return (
 		<>
 			<div className={s.profile_container}>
-				<div className={s.user_info_container}>
-					<div className={s.block_user_info}>
-						<div className={s.user_picture}>
-							<img className={s.user_img} src="https://sun9-84.userapi.com/impf/ANhdEutc5pdsfUlx7VWv6J1vPnHi77eWNuEaPA/gUwhKQlbmRc.jpg?size=1080x720&quality=96&sign=0b4e530537e15758f48f055740755b19&type=album" alt="just_married" />
-						</div>
-						<div className={s.user_info}>
-							<h3 className={s.user_name}>Даниил К.</h3>
-							<p className={s.user_birth}>Родился:</p>
-							<p className={s.user_country}>Город:</p>
-							<p className={s.user_aducation}>Образование:</p>
-							<p className={s.user_site}>Сайт:</p>
-						</div>
-					</div>
-					<div className={s.block_create_post}>
-						<p className={s.user_posts_title}>Мои посты</p>
-						<div className={s.create_new_post}>
-							<textarea className={s.textarea_post} placeholder={`Что нового?`}></textarea>
-							<button className={s.post_button} onClick={() => console.log(1)}>Опубликовать</button>
-						</div>
-					</div>
-				</div>
-				<div className={s.block_user_posts}>
-					<div className={s.old_posts}>
-						<div className={s.old_post}>
-							<div className={s.old_post_header}>
-								<div className={s.post_picture}>
-									<img className={s.post_img} src="https://sun9-84.userapi.com/impf/ANhdEutc5pdsfUlx7VWv6J1vPnHi77eWNuEaPA/gUwhKQlbmRc.jpg?size=1080x720&quality=96&sign=0b4e530537e15758f48f055740755b19&type=album" alt="intro_image" />
-								</div>
-								<div className={s.post_info_block}>
-									<div className={s.post_user_name}>Даниил К.</div>
-									<div className={s.post_date}>Date</div>
-								</div>
-							</div>
-							<p className={s.old_post_text}>Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN</p>
-						</div>
-						<div className={s.old_post}>
-							<div className={s.old_post_header}>
-								<div className={s.post_picture}>
-									<img className={s.post_img} src="https://sun9-84.userapi.com/impf/ANhdEutc5pdsfUlx7VWv6J1vPnHi77eWNuEaPA/gUwhKQlbmRc.jpg?size=1080x720&quality=96&sign=0b4e530537e15758f48f055740755b19&type=album" alt="intro_image" />
-								</div>
-								<div className={s.post_info_block}>
-									<div className={s.post_user_name}>Даниил К.</div>
-									<div className={s.post_date}>Date</div>
-								</div>
-							</div>
-							<p className={s.old_post_text}>Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN</p>
-						</div>
-						<div className={s.old_post}>
-							<div className={s.old_post_header}>
-								<div className={s.post_picture}>
-									<img className={s.post_img} src="https://sun9-84.userapi.com/impf/ANhdEutc5pdsfUlx7VWv6J1vPnHi77eWNuEaPA/gUwhKQlbmRc.jpg?size=1080x720&quality=96&sign=0b4e530537e15758f48f055740755b19&type=album" alt="intro_image" />
-								</div>
-								<div className={s.post_info_block}>
-									<div className={s.post_user_name}>Даниил К.</div>
-									<div className={s.post_date}>Date</div>
-								</div>
-							</div>
-							<p className={s.old_post_text}>Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN</p>
-						</div>
-						<div className={s.old_post}>
-							<div className={s.old_post_header}>
-								<div className={s.post_picture}>
-									<img className={s.post_img} src="https://sun9-84.userapi.com/impf/ANhdEutc5pdsfUlx7VWv6J1vPnHi77eWNuEaPA/gUwhKQlbmRc.jpg?size=1080x720&quality=96&sign=0b4e530537e15758f48f055740755b19&type=album" alt="intro_image" />
-								</div>
-								<div className={s.post_info_block}>
-									<div className={s.post_user_name}>Даниил К.</div>
-									<div className={s.post_date}>Date</div>
-								</div>
-							</div>
-							<p className={s.old_post_text}>Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN</p>
-						</div>
-						<div className={s.old_post}>
-							<div className={s.old_post_header}>
-								<div className={s.post_picture}>
-									<img className={s.post_img} src="https://sun9-84.userapi.com/impf/ANhdEutc5pdsfUlx7VWv6J1vPnHi77eWNuEaPA/gUwhKQlbmRc.jpg?size=1080x720&quality=96&sign=0b4e530537e15758f48f055740755b19&type=album" alt="intro_image" />
-								</div>
-								<div className={s.post_info_block}>
-									<div className={s.post_user_name}>Даниил К.</div>
-									<div className={s.post_date}>Date</div>
-								</div>
-							</div>
-							<p className={s.old_post_text}>Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN</p>
-						</div>
-					</div>
-				</div>
+				<UserInfo />
+				<Posts />
 			</div>
 		</>
 	);
