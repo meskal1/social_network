@@ -3,17 +3,14 @@ import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import { UserDialogItem } from './UserDialogItem/UserDialogItem';
 import { MyMessage } from './MyMessage/MyMessage';
 import { FriendMessage } from './FriendMessage/FriendMessage';
+import { DialogsPageType } from '../../redux/State';
 
-type ArrayDialogsUserNamesType = {
-	id: string
-	name: string
-}
 type DialogsType = {
-	dialogUserNames: Array<ArrayDialogsUserNamesType>
+	data: DialogsPageType
 }
-export const Dialogs: React.FC<DialogsType> = ({ dialogUserNames }) => {
+export const Dialogs: React.FC<DialogsType> = ({ data }) => {
 
-	const dialogUsers = dialogUserNames.map((a, i) => {
+	const dialogUsers = data.dialogUserNames.map((a, i) => {
 		return (
 			<UserDialogItem userName={a.name} userLogo={i} id={a.id} key={a.id} />
 		)
@@ -29,10 +26,7 @@ export const Dialogs: React.FC<DialogsType> = ({ dialogUserNames }) => {
 	const messageRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	useEffect(() => {
 		if (messageRef.current) {
-			messageRef.current.scrollIntoView(
-				{
-					inline: 'end'
-				});
+			messageRef.current.scrollIntoView({ inline: 'end' });
 		}
 	});
 

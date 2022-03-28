@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import s from './App.module.scss';
 import { Dialogs } from './components/Dialogs/Dialogs';
 import { Header } from './components/Header/Header';
@@ -10,34 +10,31 @@ import { News } from './components/News/News';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
 import { SV } from './components/SV/SV';
+import { RootStateType } from './redux/State'
 
-type dialogUserNamesType = {
-	id: string
-	name: string
-}
 type AppType = {
-	dialogUserNames: dialogUserNamesType[]
+	state: RootStateType
 }
-const App: React.FC<AppType> = ({ dialogUserNames }) => {
+
+//TODO Добавить 3-6 ть друзей в Navbar и (самые часто общительные или онлайн друзья)
+const App: React.FC<AppType> = ({ state }) => {
 
 	return (
-		<BrowserRouter>
-			<div className={s.wrapper}>
-				<Header />
-				<main className={s.main__container}>
-					<Navbar />
-					<div className={s.main_content}>
-						<Route path="/profile" component={Profile} />
-						<Route path="/news" component={News} />
-						<Route exact path="/dialogs" render={() => <Dialogs dialogUserNames={dialogUserNames} />} />
-						<Route path="/music" component={Music} />
-						<Route path="/settings" component={Settings} />
-						<Route path="/sv" component={SV} />
-					</div>
-				</main>
-				<footer className={s.footer__container} ></footer >
-			</div>
-		</BrowserRouter>
+		<div className={s.wrapper}>
+			<Header />
+			<main className={s.main__container}>
+				<Navbar />
+				<div className={s.main_content}>
+					<Route path="/profile" render={() => <Profile data={state.profilePage} />} />
+					<Route path="/news" render={() => <News />} />
+					<Route exact path="/dialogs" render={() => <Dialogs data={state.dialogsPage} />} />
+					<Route path="/music" render={() => <Music />} />
+					<Route path="/settings" render={() => <Settings />} />
+					<Route path="/sv" render={() => <SV />} />
+				</div>
+			</main>
+			<footer className={s.footer__container} ></footer >
+		</div>
 	);
 }
 export default App;
