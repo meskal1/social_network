@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './Post.module.scss'
 type PostType = {
-	postDate: string
-	postText: string
+	postDate: string,
+	postText: string,
 }
 
-export const Post: React.FC<PostType> = ({ postDate, postText }) => {
+const Post: React.FC<PostType> = ({ postDate, postText, }) => {
 	return (
 		<>
 			<div className={s.old_post}>
@@ -23,3 +23,4 @@ export const Post: React.FC<PostType> = ({ postDate, postText }) => {
 		</>
 	);
 };
+export default React.memo(Post);

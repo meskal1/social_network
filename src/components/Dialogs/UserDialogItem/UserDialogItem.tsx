@@ -3,27 +3,29 @@ import { NavLink } from 'react-router-dom';
 import s from './UserDialogItem.module.scss';
 
 type UserDialogItemType = {
-	userName: string
-	userLogo: number
-	id: string
+	userName: string,
+	userAvatarLink: number,
+	id: string,
 }
-export const UserDialogItem: React.FC<UserDialogItemType> = ({
+const UserDialogItem: React.FC<UserDialogItemType> = ({
 	userName,
-	userLogo,
+	userAvatarLink,
 	id,
 }) => {
 
-	const logo = 'https://oboi247.ru/img/post/45/' + userLogo + '.jpg';
+	const logo = `https://oboi247.ru/img/post/45/${userAvatarLink}.jpg`;
 	const link = '/dialogs/' + userName.toLowerCase().replace(` `, `_`) + `/` + id;
 
 	return (
 		<>
 			<li className={s.dialog_item}>
-				<NavLink className={s.dialog_user_name}
+				<NavLink
+					className={s.dialog_user_name}
 					to={link}
 					activeClassName={s.active_dialog}>
 					<div className={s.friend_picture}>
-						<img className={s.friend_img}
+						<img
+							className={s.friend_img}
 							src={logo}
 							alt="friend_logo" />
 					</div>
@@ -33,3 +35,4 @@ export const UserDialogItem: React.FC<UserDialogItemType> = ({
 		</>
 	);
 };
+export default React.memo(UserDialogItem);

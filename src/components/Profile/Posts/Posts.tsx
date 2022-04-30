@@ -1,17 +1,22 @@
 import React from 'react';
-import { Post } from './Post/Post';
+import Post from './Post/Post';
 import s from './Posts.module.scss'
 type PostDataType = {
-	postDate: string
-	postText: string
+	postDate: string,
+	postText: string,
 }
 type PostsType = {
-	postData: PostDataType[]
+	postData: PostDataType[],
 }
 
-export const Posts: React.FC<PostsType> = ({ postData }) => {
+const Posts: React.FC<PostsType> = ({ postData, }) => {
 
-	const publishedPosts = postData.map((el, i) => <Post postDate={el.postDate} postText={el.postText} key={i + 1} />)
+	const publishedPosts = postData.map((el, i) => {
+		return <Post
+			postDate={el.postDate}
+			postText={el.postText}
+			key={i + 1} />
+	});
 
 	return (
 		<>
@@ -23,3 +28,4 @@ export const Posts: React.FC<PostsType> = ({ postData }) => {
 		</>
 	);
 };
+export default React.memo(Posts);

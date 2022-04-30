@@ -1,20 +1,24 @@
 import s from './Dialogs.module.scss';
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
-import { UserDialogItem } from './UserDialogItem/UserDialogItem';
+import UserDialogItem from './UserDialogItem/UserDialogItem';
 import { MyMessage } from './MyMessage/MyMessage';
 import { FriendMessage } from './FriendMessage/FriendMessage';
-import { DialogsPageType } from '../../redux/State';
+import { UsersDialogsType } from '../../redux/State';
 
 type DialogsType = {
-	data: DialogsPageType
+	data: UsersDialogsType,
 }
-export const Dialogs: React.FC<DialogsType> = ({ data }) => {
+const Dialogs: React.FC<DialogsType> = ({ data, }) => {
 
-	const dialogUsers = data.dialogUserNames.map((a, i) => {
+	const dialogUsers = data.usersDialogs.map((el, i) => {
 		return (
-			<UserDialogItem userName={a.name} userLogo={i} id={a.id} key={a.id} />
+			<UserDialogItem
+				userName={el.name}
+				userAvatarLink={i}
+				id={el.id}
+				key={el.id} />
 		)
-	})
+	});
 	//TODO Зарефакторить Messages
 	//TODO Доделать скрол, он должен пропадать через 2 секунды после замирания движения мышки в поле фокуса и если поле вне фокуса, должен список начинаться снизу а не сверху
 
@@ -23,6 +27,7 @@ export const Dialogs: React.FC<DialogsType> = ({ data }) => {
 		setInputStyleBefore(e.currentTarget.textContent ? s.input_message : s.input_messageBefore);
 	};
 
+	// Прибитие диалога с пользователем к низу
 	const messageRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	useEffect(() => {
 		if (messageRef.current) {
@@ -98,3 +103,4 @@ export const Dialogs: React.FC<DialogsType> = ({ data }) => {
 		</div>
 	);
 };
+export default React.memo(Dialogs);

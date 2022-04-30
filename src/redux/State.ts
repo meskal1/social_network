@@ -1,28 +1,28 @@
 import { v1 } from "uuid";
 
 export type PostDataType = {
-	id: string
-	postDate: string
-	postText: string
+	id: string,
+	postDate: string,
+	postText: string,
 }
-export type DialogUserNamesType = {
-	id: string
-	name: string
+export type UsersDialogsNamesType = {
+	id: string,
+	name: string,
 }
-export type DialogsPageType = {
-	dialogUserNames: DialogUserNamesType[]
+export type UsersDialogsType = {
+	usersDialogs: UsersDialogsNamesType[],
 }
-export type ProfilePageType = {
-	postData: PostDataType[]
+export type UserProfileType = {
+	userPostData: PostDataType[],
 }
 export type RootStateType = {
-	dialogsPage: DialogsPageType
-	profilePage: ProfilePageType
+	dataForDialogsComponent: UsersDialogsType,
+	dataForProfileComponent: UserProfileType,
 }
 
 const state: RootStateType = {
-	dialogsPage: {
-		dialogUserNames: [
+	dataForDialogsComponent: {
+		usersDialogs: [
 			{ id: v1(), name: 'Dima Boyarski' },
 			{ id: v1(), name: 'Vika Rozumovskaya' },
 			{ id: v1(), name: 'Sasha Boyarushnik' },
@@ -36,14 +36,14 @@ const state: RootStateType = {
 			{ id: v1(), name: 'Roman Panich' },
 			{ id: v1(), name: 'Daniel Kossi' },
 			{ id: v1(), name: 'Serega Joravch' },
-		]
+		],
 	},
-	profilePage: {
-		postData: [
+	dataForProfileComponent: {
+		userPostData: [
 			{ id: v1(), postDate: '26.03.2022', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },
 			{ id: v1(), postDate: '26.03.2022', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },
 			{ id: v1(), postDate: '26.03.2022', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },
-		]
+		],
 	},
 }
 export default state;

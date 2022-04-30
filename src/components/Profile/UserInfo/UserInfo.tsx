@@ -5,7 +5,7 @@ type UserInfoType = {
 
 }
 
-export const UserInfo = (props: UserInfoType) => {
+const UserInfo: React.FC<UserInfoType> = ({ }) => {
 	return (
 		<>
 			<div className={s.user_info_container}>
@@ -32,3 +32,4 @@ export const UserInfo = (props: UserInfoType) => {
 		</>
 	);
 };
+export default React.memo(UserInfo);

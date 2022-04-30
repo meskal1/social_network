@@ -1,20 +1,21 @@
 import React from 'react';
-import { ProfilePageType } from '../../redux/State';
-import { Posts } from './Posts/Posts';
+import { UserProfileType } from '../../redux/State';
+import Posts from './Posts/Posts';
 import s from './Profile.module.scss';
-import { UserInfo } from './UserInfo/UserInfo';
+import UserInfo from './UserInfo/UserInfo';
 
 type ProfileType = {
-	data: ProfilePageType
+	data: UserProfileType,
 }
 
-export const Profile: React.FC<ProfileType> = ({ data }) => {
+const Profile: React.FC<ProfileType> = ({ data, }) => {
 	return (
 		<>
 			<div className={s.profile_container}>
 				<UserInfo />
-				<Posts postData={data.postData} />
+				<Posts postData={data.userPostData} />
 			</div>
 		</>
 	);
 };
+export default React.memo(Profile);
