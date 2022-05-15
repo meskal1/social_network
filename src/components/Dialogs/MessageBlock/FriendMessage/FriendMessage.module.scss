@@ -15,7 +15,8 @@
 			position: absolute;
 			width: 10px;
 			height: 10px;
-			border-radius: 0px 10px 0px 0px;
+			overflow: hidden;
+			border-radius: 0px 10px 0px 9px;
 			background: black;
 			left: -10px;
 			top: 0px;
@@ -25,6 +26,7 @@
 			position: absolute;
 			width: 10px;
 			height: 10px;
+			border-radius: 0px 0px 0px 10px;
 			background: rgba(118, 121, 117, 0.83);
 			left: -10px;
 			top: 0px;
@@ -32,6 +34,7 @@
 	}
 }
 .friend_picture {
+	min-width: 50px;
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;

@@ -16,7 +16,8 @@
 			position: absolute;
 			width: 10px;
 			height: 10px;
-			border-radius: 10px 0px 0px 0px;
+			border-radius: 10px 0px 9px 0;
+
 			background: black;
 			right: -10px;
 			top: 0px;
@@ -26,6 +27,7 @@
 			position: absolute;
 			width: 10px;
 			height: 10px;
+			border-radius: 0px 0px 10px 0px;
 			background: rgba(72, 141, 49, 0.83);
 			right: -10px;
 			top: 0px;

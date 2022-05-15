@@ -39,5 +39,6 @@
 	}
 	.old_post_text {
 		line-height: 18px;
+		white-space: pre-wrap; // Оставляет больше одного пробела между символами 
 	}
 }

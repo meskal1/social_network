@@ -1,17 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import s from './UserDialogItem.module.scss';
+import s from './UserItem.module.scss';
 
-type UserDialogItemType = {
+type UserItemType = {
 	userName: string,
 	userAvatarLink: number,
 	id: string,
 }
-const UserDialogItem: React.FC<UserDialogItemType> = ({
-	userName,
-	userAvatarLink,
-	id,
-}) => {
+
+export const UserItem: React.FC<UserItemType> = React.memo(({ userName, userAvatarLink, id, }) => {
+	console.log('Render UserItem');
 
 	const logo = `https://oboi247.ru/img/post/45/${userAvatarLink}.jpg`;
 	const link = '/dialogs/' + userName.toLowerCase().replace(` `, `_`) + `/` + id;
@@ -34,5 +32,4 @@ const UserDialogItem: React.FC<UserDialogItemType> = ({
 			</li>
 		</>
 	);
-};
-export default React.memo(UserDialogItem);
+});

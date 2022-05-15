@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { v1 } from 'uuid';
 import App from './App';
 import './index.css';
-import state from './redux/State'
+import { Provider } from 'react-redux';
+import { store } from './redux/Store';
 
 ReactDOM.render(
-	<BrowserRouter>
-		<App state={state} />
-	</BrowserRouter>, document.getElementById('root'));
+	<Provider store={store}>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</Provider>, document.getElementById('root'));
+
+// rerenderEtireTree(store.getState());
+
+// store.subscribe(() => rerenderEtireTree(store.getState()));

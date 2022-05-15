@@ -1,21 +1,20 @@
 import React from 'react';
-import Post from './Post/Post';
+import { useSelector } from 'react-redux';
+import { AppRootStateType } from '../../../redux/Store';
+import { PostsType } from '../UserInfo/CreatePost/CreatePostReducer';
+import { Post } from './Post/Post';
 import s from './Posts.module.scss'
-type PostDataType = {
-	postDate: string,
-	postText: string,
-}
-type PostsType = {
-	postData: PostDataType[],
-}
 
-const Posts: React.FC<PostsType> = ({ postData, }) => {
+export const Posts = React.memo(() => {
+	console.log('Rendered PostsBlock');
 
-	const publishedPosts = postData.map((el, i) => {
+	const posts = useSelector<AppRootStateType, PostsType>(state => state.postData.posts);
+
+	const publishedPosts = posts.map((el, i) => {
 		return <Post
+			key={el.id}
 			postDate={el.postDate}
-			postText={el.postText}
-			key={i + 1} />
+			postText={el.postText} />
 	});
 
 	return (
@@ -27,5 +26,4 @@ const Posts: React.FC<PostsType> = ({ postData, }) => {
 			</div>
 		</>
 	);
-};
-export default React.memo(Posts);
+});

@@ -1,0 +1,79 @@
+.block_create_post {
+	padding: 15px;
+	position: relative;
+	.user_posts_title {
+		font-size: 20px;
+		font-weight: 500;
+		margin: 0px 0px 10px 0px;
+	}
+	.create_new_post {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px;
+		.textarea_placeholder{
+			position: absolute;
+			z-index: 6;
+			color: rgba(0, 0, 0, 0.37);
+			font-weight: 600;
+			font-size: 13px;
+			top: 9px;
+			left: 20px;
+			transition: all linear 0.2s;
+		}
+		.textarea_placeholder_mod{
+			position: absolute;
+			z-index: 6;
+			color: rgba(0, 0, 0, 0.37);
+			font-weight: 600;
+			font-size: 13px;
+			top: 9px;
+			left: 20px;
+			transition: all linear 0.2s;
+			opacity: 0;
+			transform: translate(90px, 0);
+		}
+		.textarea_post {
+			font-family: "Montserrat";
+			overflow-y: scroll;
+			font-weight: 600;
+			padding: 0px 5px;
+			resize: none;
+			height: 115px;
+			flex: 1 1 auto;
+			border-radius: 5px;
+			border: 7px solid rgba(255, 255, 255, 0);
+			background: rgba(255, 255, 255, 0.789);
+			&::-webkit-scrollbar {
+				width: 0; /* Remove scrollbar space */
+				background: transparent; /* Optional: just make scrollbar invisible */
+			}
+			&::placeholder {
+				padding: 0 0 0 7px;
+				color: rgba(0, 0, 0, 0.37);
+				transition: all linear 1.2s;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		.post_button {
+			background: #393e48;
+			color: #c6c7ca;
+			box-shadow: white 0px 0px 6px 1px;
+			font-family: "Montserrat";
+			font-weight: 600;
+			font-size: 12px;
+			padding: 7px 10px;
+			align-self: flex-end;
+			border-radius: 30px;
+			cursor: pointer;
+			transition: all linear 0.15s;
+			&:hover {
+				background: #6b6e75;
+				color: white;
+				transition: all linear 0.15s;
+			}
+		}
+	}
+}

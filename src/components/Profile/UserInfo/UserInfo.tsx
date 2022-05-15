@@ -1,11 +1,8 @@
 import React from 'react';
+import { CreatePost } from './CreatePost/CreatePost';
 import s from './UserInfo.module.scss'
 
-type UserInfoType = {
-
-}
-
-const UserInfo: React.FC<UserInfoType> = ({ }) => {
+export const UserInfo = React.memo(() => {
 	return (
 		<>
 			<div className={s.user_info_container}>
@@ -21,15 +18,8 @@ const UserInfo: React.FC<UserInfoType> = ({ }) => {
 						<p className={s.user_site}>Сайт:</p>
 					</div>
 				</div>
-				<div className={s.block_create_post}>
-					<p className={s.user_posts_title}>Мои посты</p>
-					<div className={s.create_new_post}>
-						<textarea className={s.textarea_post} placeholder={`Что нового?`}></textarea>
-						<button className={s.post_button} onClick={() => console.log(1)}>Опубликовать</button>
-					</div>
-				</div>
+				<CreatePost />
 			</div>
 		</>
 	);
-};
-export default React.memo(UserInfo);
+});
