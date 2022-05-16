@@ -28,20 +28,22 @@ export const createPostReducer = (state: InitialStateType = initialState, action
 				newPostText: action.payload.text
 			}
 		}
-		case 'ON_CLICK_ADD_POST': {
+		case ON_CLICK_ADD_POST: {
 			const date = new Date();
 			const minutes = date.getMinutes();
 			const hours = date.getHours();
 			const stringTime = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
 			const stringDate = date.toLocaleDateString();
-			if (state.newPostText !== '') {
+			if (action.payload.postText !== '') {
 				return {
 					...state,
 					posts: [{ id: v1(), postDate: `${stringDate} в ${stringTime}`, postText: action.payload.postText }, ...state.posts],
 					newPostText: '',
 				}
-			};
-			return state;
+			} else return {
+				...state,
+				newPostText: '',
+			}
 		}
 		default: return state;
 	}

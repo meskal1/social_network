@@ -4,59 +4,54 @@
 	bottom: 10px;
 	display: flex;
 	padding: 0 10px;
-	.input_messageBefore {
+	.textarea_placeholder{
+		position: absolute;
+		z-index: 6;
+		color: rgba(0, 0, 0, 0.37);
+		font-weight: 500;
+		font-size: 13px;
+		top: 17px;
+		left: 40px;
+		cursor: text;
+	}
+	.textarea_placeholder_mod{
+		position: absolute;
+		z-index: 6;
+		color: rgba(0, 0, 0, 0.37);
+		font-weight: 500;
+		font-size: 13px;
+		top: 17px;
+		left: 40px;
+		transition: all linear 0.2s;
+		opacity: 0;
+		transform: translate(90px, 0);
+		cursor: text;
+	}
+	.textarea_message{
 		font-family: "Montserrat";
+		border: 13px solid white;
+		overflow-y: scroll;
 		font-size: 14px;
 		font-weight: 500;
 		width: 500px;
+		height: 47px;
 		max-height: 270px;
-		padding: 2px 13px 0;
 		border-radius: 30px;
+		resize: none;
 		margin: 0px 10px 0px 0px;
-		border: 13px solid white;
-		overflow-y: scroll;
-		line-height: 16px;
+		padding: 2px 13px 0;
 		background: white;
 		color: black;
+		line-height: 16px;
 		&::-webkit-scrollbar {
 			width: 0; /* Remove scrollbar space */
 			background: transparent; /* Optional: just make scrollbar invisible */
-		}
-		&::before {
-			content: "Написать сообщение...";
-			color: #969696;
 		}
 		&:focus {
 			outline: none;
 		}
 	}
-	.input_message {
-		font-family: "Montserrat";
-		border: 13px solid white;
-		font-size: 14px;
-		font-weight: 500;
-		width: 500px;
-		max-height: 270px;
-		padding: 2px 13px 0;
-		border-radius: 30px;
-		margin: 0px 10px 0px 0px;
-		overflow-y: scroll;
-		line-height: 16px;
-		background: white;
-		color: black;
-		&::-webkit-scrollbar {
-			width: 0; /* Remove scrollbar space */
-			background: transparent; /* Optional: just make scrollbar invisible */
-		}
-		&::before {
-			content: "";
-			color: #969696;
-		}
-		&:focus {
-			outline: none;
-		}
-	}
-	.send_message {
+	.send_message_button {
 		align-self: flex-end;
 		background: #e8e3e7 url("./telegram_logo.jpg") 0 2px/47px 47px no-repeat;
 		width: 47px;

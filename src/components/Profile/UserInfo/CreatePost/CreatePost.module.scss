@@ -15,23 +15,24 @@
 			position: absolute;
 			z-index: 6;
 			color: rgba(0, 0, 0, 0.37);
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 13px;
 			top: 9px;
 			left: 20px;
-			transition: all linear 0.2s;
+			cursor: text;
 		}
 		.textarea_placeholder_mod{
 			position: absolute;
 			z-index: 6;
 			color: rgba(0, 0, 0, 0.37);
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 13px;
 			top: 9px;
 			left: 20px;
 			transition: all linear 0.2s;
 			opacity: 0;
 			transform: translate(90px, 0);
+			cursor: text;
 		}
 		.textarea_post {
 			font-family: "Montserrat";
@@ -47,11 +48,6 @@
 			&::-webkit-scrollbar {
 				width: 0; /* Remove scrollbar space */
 				background: transparent; /* Optional: just make scrollbar invisible */
-			}
-			&::placeholder {
-				padding: 0 0 0 7px;
-				color: rgba(0, 0, 0, 0.37);
-				transition: all linear 1.2s;
 			}
 			&:focus {
 				outline: none;
