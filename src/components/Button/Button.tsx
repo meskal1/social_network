@@ -1,13 +1,13 @@
 import React from 'react';
 
-export type ButtonType = {
+
+type ButtonType = {
 	name?: string
 	onClick: () => void
 	className?: string
 }
 
-export const Button: React.FC<ButtonType> = React.memo(({ name, onClick, className }) => {
-	console.log('Rendered Button');
+export const Button: React.FC<ButtonType> = ({ name, onClick, className }) => {
 
 	const onClickButtonHandler = () => onClick();
 
@@ -16,4 +16,4 @@ export const Button: React.FC<ButtonType> = React.memo(({ name, onClick, classNa
 			<button className={className} onClick={onClickButtonHandler}>{name}</button>
 		</>
 	);
-});
+};

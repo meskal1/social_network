@@ -5,8 +5,7 @@ import { UsersListType } from './UsersListReducer';
 import { UserItem } from './UserItem/UserItem';
 import s from './UsersList.module.scss'
 
-export const UsersList = React.memo(() => {
-	console.log('Render UsersList');
+export const UsersList = () => {
 
 	const usersList = useSelector<AppRootStateType, UsersListType>(state => state.usersDialogsList.usersList);
 
@@ -26,4 +25,4 @@ export const UsersList = React.memo(() => {
 			</ul>
 		</>
 	);
-});
+};

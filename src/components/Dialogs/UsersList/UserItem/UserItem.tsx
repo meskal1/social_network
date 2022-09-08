@@ -8,8 +8,7 @@ type UserItemType = {
 	id: string,
 }
 
-export const UserItem: React.FC<UserItemType> = React.memo(({ userName, userAvatarLink, id, }) => {
-	console.log('Render UserItem');
+export const UserItem: React.FC<UserItemType> = ({ userName, userAvatarLink, id, }) => {
 
 	const logo = `https://oboi247.ru/img/post/45/${userAvatarLink}.jpg`;
 	const link = '/dialogs/' + userName.toLowerCase().replace(` `, `_`) + `/` + id;
@@ -32,4 +31,4 @@ export const UserItem: React.FC<UserItemType> = React.memo(({ userName, userAvat
 			</li>
 		</>
 	);
-});
+};

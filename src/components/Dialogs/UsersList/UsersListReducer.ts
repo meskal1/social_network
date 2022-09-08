@@ -22,7 +22,7 @@ const initialState = {
 		{ id: v1(), name: 'Roman Panich' },
 		{ id: v1(), name: 'Daniel Kossi' },
 		{ id: v1(), name: 'Serega Joravch' },
-	],
+	] as UsersListType,
 };
 type InitialStateType = typeof initialState;
 

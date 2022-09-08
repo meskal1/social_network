@@ -7,7 +7,9 @@ export type PostDataType = {
 	postDate: string
 	postText: string
 }
-export type NewPostTextType = string
+export type NewPostTextType = {
+	newPostText: string
+}
 export type PostsType = PostDataType[]
 
 const initialState = {
@@ -15,7 +17,7 @@ const initialState = {
 	posts: [
 		{ id: v1(), postDate: '26.03.2021 в 20:00', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },
 		{ id: v1(), postDate: '26.03.2020 в 19:36', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },
-		{ id: v1(), postDate: '26.03.2019 в 19:33', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },],
+		{ id: v1(), postDate: '26.03.2019 в 19:33', postText: 'Магазин приложений с хакерскими утилитами от Offensive Security на Android. 16 июля компания Offensive Security сообщила о создании Kali Net Hunter App Store с бесплатными приложениями, связанными с информационной безопасностью: http://amp.gs/r7pN' },] as PostsType,
 };
 type InitialStateType = typeof initialState;
 

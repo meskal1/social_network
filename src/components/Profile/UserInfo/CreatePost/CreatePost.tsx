@@ -1,27 +1,20 @@
 import React, { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppRootStateType } from '../../../../redux/Store';
 import { Button } from '../../../Button/Button';
 import s from './CreatePost.module.scss'
-import { NewPostTextType, onChangeTextareaAC, onClickAddPostAC } from './CreatePostReducer';
+import { CreatePostType } from './CreatePostContainer';
 
-export const CreatePost = React.memo(() => {
-	console.log('Rendered CreatePost');
+export const CreatePost: React.FC<CreatePostType> = ({ newPostText, onChangeTextarea, addPost }) => {
 
-	const dispatch = useDispatch();
-	const newPostText = useSelector<AppRootStateType, NewPostTextType>(state => state.postData.newPostText);
-	const [labelTransition, setLabelTransition] = useState({ transition: "all linear 0.2s" })
-	const labelPlaceholder = newPostText.length === 0 ? s.textarea_placeholder : s.textarea_placeholder_mod;
+	const [labelTransitionStyle, setLabelTransitionStyle] = useState({ transition: "all linear 0.2s" })
+	const labelPlaceholderStyle = newPostText.length === 0 ? s.textarea_placeholder : s.textarea_placeholder_mod;
 
 	const onChangeTextareaHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-		setLabelTransition({ transition: "all linear 0.2s" })
-		const action = onChangeTextareaAC(e.currentTarget.value);
-		dispatch(action);
+		setLabelTransitionStyle({ transition: "all linear 0.2s" })
+		onChangeTextarea(e.currentTarget.value)
 	};
 	const onClickAddPost = useCallback(() => {
-		setLabelTransition({ transition: "none" });
-		const action = onClickAddPostAC(newPostText.trim());
-		dispatch(action);
+		setLabelTransitionStyle({ transition: "none" });
+		addPost(newPostText.trim())
 	}, [newPostText.trim().length]);
 
 	const onKeyDownInputHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -36,8 +29,8 @@ export const CreatePost = React.memo(() => {
 				<p className={s.user_posts_title}>Мои посты</p>
 				<div className={s.create_new_post}>
 					<label
-						className={labelPlaceholder}
-						style={labelTransition}
+						className={labelPlaceholderStyle}
+						style={labelTransitionStyle}
 						htmlFor="textarea_post">Что нового?</label>
 					<textarea
 						id="textarea_post"
@@ -50,4 +43,4 @@ export const CreatePost = React.memo(() => {
 			</div>
 		</>
 	);
-});
+};

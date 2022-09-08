@@ -7,7 +7,7 @@ type NavbarType = {
 
 }
 
-export const Navbar: React.FC<NavbarType> = React.memo(({ }) => {
+export const Navbar: React.FC<NavbarType> = ({ }) => {
 	//TODO замапить навлинки, передать их в стейт в виде обьекта ключ значение 
 	//TODO создать новую компоненту друзей вместо заглушки, замапить ее и добавить данные в стейт
 	return (
@@ -20,6 +20,8 @@ export const Navbar: React.FC<NavbarType> = React.memo(({ }) => {
 						<NavLink className={s.sideBar_link} to="/news" activeClassName={s.active_link}>Новости</NavLink></li>
 					<li className={s.sideBar_item}>
 						<NavLink className={s.sideBar_link} to="/dialogs" activeClassName={s.active_link}>Сообщения</NavLink></li>
+					<li className={s.sideBar_item}>
+						<NavLink className={s.sideBar_link} to="/users" activeClassName={s.active_link}>Поиск контактов</NavLink></li>
 					<li className={s.sideBar_item}>
 						<NavLink className={s.sideBar_link} to="/music" activeClassName={s.active_link}>Музыка</NavLink></li>
 					<li className={s.sideBar_item}>
@@ -38,4 +40,4 @@ export const Navbar: React.FC<NavbarType> = React.memo(({ }) => {
 			</nav>
 		</>
 	);
-});
+};

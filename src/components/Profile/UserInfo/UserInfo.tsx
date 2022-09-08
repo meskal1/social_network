@@ -1,8 +1,8 @@
 import React from 'react';
-import { CreatePost } from './CreatePost/CreatePost';
+import { CreatePostContainer } from './CreatePost/CreatePostContainer';
 import s from './UserInfo.module.scss'
 
-export const UserInfo = React.memo(() => {
+export const UserInfo = () => {
 	return (
 		<>
 			<div className={s.user_info_container}>
@@ -18,8 +18,8 @@ export const UserInfo = React.memo(() => {
 						<p className={s.user_site}>Сайт:</p>
 					</div>
 				</div>
-				<CreatePost />
+				<CreatePostContainer />
 			</div>
 		</>
 	);
-});
+};

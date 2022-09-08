@@ -5,8 +5,7 @@ import { Button } from '../../Button/Button';
 import s from './SendMessageBlock.module.scss'
 import { NewMessageTextType, onChangeTextareaSendMessageAC, onClickSendMessageButtonAC } from './SendMessageBlockReducer';
 
-export const SendMessageBlock = React.memo(() => {
-	console.log('Render SendMessageBlock');
+export const SendMessageBlock = () => {
 
 	const dispatch = useDispatch();
 	const newMessageText = useSelector<AppRootStateType, NewMessageTextType>(state => state.messages.newMessageText);
@@ -25,7 +24,7 @@ export const SendMessageBlock = React.memo(() => {
 		setLabelTransition({ transition: "none" });
 		const action = onClickSendMessageButtonAC(newMessageText.trim());
 		dispatch(action);
-	}, [newMessageText.trim().length]);
+	}, [dispatch, newMessageText.trim().length]);
 
 	const onChangeTextareaMessageHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		autoResizeTextarea(e);
@@ -60,10 +59,12 @@ export const SendMessageBlock = React.memo(() => {
 			</div>
 		</>
 	);
-});
+};
 
 // const messageAreaRef = useRef<any>();
 // ref={messageAreaRef}
-// const target = e.currentTarget as HTMLTextAreaElement;
-// messageAreaRef.current.style.height = "50px";
-// messageAreaRef.current.style.height = `${target.scrollHeight + 14}px`;
+// const autoResizeTextarea = (e: SyntheticEvent) => {
+// 	const target = e.currentTarget as HTMLTextAreaElement;
+// 	messageAreaRef.current.style.height = "47px";
+// 	messageAreaRef.current.style.height = `${target.scrollHeight + 26}px`;
+// }; 

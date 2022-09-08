@@ -7,12 +7,14 @@ import { SendMessageBlock } from './SendMessageBlock/SendMessageBlock';
 export const Dialogs = React.memo(() => {
 
 	return (
-		<div className={s.dialogs_container}>
-			<UsersList />
-			<div className={s.dialog_current_user}>
-				<MessageBlock />
-				<SendMessageBlock />
+		<>
+			<div className={s.dialogs_container}>
+				<UsersList />
+				<div className={s.dialog_current_user}>
+					<MessageBlock />
+					<SendMessageBlock />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 });
